@@ -1,15 +1,14 @@
 import { Fragment } from "react";
 
 function ListGroup() {
+    const items = ["Pokemon XD", "Resident Evil 4", "The Last of Us", "The Lion King"]
   return (
     <Fragment>
         <h1>List</h1>
         <ul className="list-group">
-      <li className="list-group-item">An item</li>
-      <li className="list-group-item">A second item</li>
-      <li className="list-group-item">A third item</li>
-      <li className="list-group-item">A fourth item</li>
-      <li className="list-group-item">And a fifth one</li>
+            {items.map((item) => (
+                <li key={item}>{item}</li>
+            ))}
     </ul>
     </Fragment>
     
