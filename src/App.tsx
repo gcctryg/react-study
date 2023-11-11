@@ -9,7 +9,11 @@ function App() {
     "The Lion King",
   ];
 
-  return <div><ListGroup items={items} heading={"Games"} /></div>
+  const handleSelectItem = (item:string) => {
+    console.log(item)
+  }
+
+  return <div><ListGroup items={items} heading={"Games"} onSelectItem={handleSelectItem} /></div>
 }
 
 export default App
