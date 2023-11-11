@@ -1,13 +1,13 @@
 import { Fragment, useState } from "react";
 //import { MouseEvent } from "react";
 
-function ListGroup() {
-  let items = [
-    "Pokemon XD",
-    "Resident Evil 4",
-    "The Last of Us",
-    "The Lion King",
-  ];
+// {item: [], heading: string}
+interface Props {
+    items: string[]
+    heading: string
+}
+
+function ListGroup({items, heading}:Props) {
   //Hook
   const [selectedIndex, setSelectedIndex] = useState(-1)
 
@@ -17,7 +17,7 @@ function ListGroup() {
   
   return (
     <Fragment>
-      <h1>List</h1>
+      <h1>{heading}</h1>
       {items.length === 0 && <p>No items</p>}
       <ul className="list-group">
         {items.map((item, index) => (
