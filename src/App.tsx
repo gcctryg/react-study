@@ -1,5 +1,6 @@
 //import Message from './Message'
 import Alert from "./components/Alert"
+import Button from "./components/Button"
 import ListGroup from "./components/listGroup"
 
 function App() {
@@ -17,12 +18,17 @@ function App() {
 
   // return <div><ListGroup items={items} heading={"Games"} onSelectItem={handleSelectItem} /></div>
 
-  return ( <div>
-    <Alert>
-      Hellow <span>World</span>
-    </Alert>
-  </div>)
+  //Alert
+  // return ( <div>
+  //   <Alert>
+  //     Hellow <span>World</span>
+  //   </Alert>
+  // </div>)
 
+  //Button
+  return (<div>
+    <Button onClinck={() => console.log("clicked")}>the button</Button>
+  </div>)
 }
 
 export default App
