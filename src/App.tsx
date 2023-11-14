@@ -1,7 +1,8 @@
 //import Message from './Message'
-import Alert from "./components/Alert"
-import Button from "./components/Button"
-import ListGroup from "./components/listGroup"
+import { useState } from "react";
+import Alert from "./components/Alert";
+import Button from "./components/Button";
+import ListGroup from "./components/listGroup";
 
 function App() {
   //ListGroup
@@ -26,9 +27,23 @@ function App() {
   // </div>)
 
   //Button
-  return (<div>
-    <Button onClinck={() => console.log("clicked")}>the button</Button>
-  </div>)
+  // return (<div >
+  //   <Button onClinck={() => console.log("clicked")}>the button</Button>
+  // </div>)
+
+  //Alert Button
+  const [alertVisible, setAlertVisibility] = useState(false);
+
+  return (
+    <div>
+      {alertVisible && (
+        <Alert onClose={() => setAlertVisibility(false)}>
+          <strong>DO NOT</strong> Click This
+        </Alert>
+      )}
+      <Button onClinck={() => setAlertVisibility(true)}>the button</Button>
+    </div>
+  );
 }
 
-export default App
+export default App;
